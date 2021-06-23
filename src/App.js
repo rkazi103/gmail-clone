@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "./components/Header/";
+import Header from "./components/header/";
+import Sidebar from "./components/sidebar/";
 import GlobalStyles from "./styles/globalStyles";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <GlobalStyles />
 
       <Header />
+      <Sidebar />
     </div>
   );
 }
