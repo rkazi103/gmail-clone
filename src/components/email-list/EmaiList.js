@@ -4,6 +4,7 @@ import {
   SettingsLeft,
   SettingsRight,
   EmailSections,
+  List,
 } from "./EmailListStyle";
 import { Checkbox, IconButton } from "@material-ui/core";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
@@ -17,6 +18,7 @@ import Section from "./Section";
 import InboxIcon from "@material-ui/icons/Inbox";
 import PeopleIcon from "@material-ui/icons/People";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import EmailRow from "./EmailRow";
 
 const EmaiList = () => {
   return (
@@ -62,6 +64,29 @@ const EmaiList = () => {
         <Section Icon={PeopleIcon} title="Social" color="#1A73E8" />
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </EmailSections>
+
+      <List>
+        <EmailRow
+          title="Twitch"
+          subject="Important"
+          description="test"
+          time="10pm"
+        />
+
+        <EmailRow
+          title="Twitch"
+          subject="Important"
+          description="test"
+          time="10pm"
+        />
+
+        <EmailRow
+          title="Twitch"
+          subject="Important"
+          description="test"
+          time="10pm"
+        />
+      </List>
     </Container>
   );
 };

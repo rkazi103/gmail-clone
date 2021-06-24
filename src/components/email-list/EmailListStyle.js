@@ -28,3 +28,5 @@ export const EmailSections = styled.div`
   border-bottom: 1px solid whitesmoke;
   z-index: 999;
 `;
+
+export const List = styled.div``;
