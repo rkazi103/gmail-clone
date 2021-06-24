@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  flex: 0.3;
+  max-width: 300px;
+  padding-right: 20px;
+`;
 
 export const ComposeButton = styled(Button)`
   margin-top: 15px !important;

@@ -15,6 +15,7 @@ SidebarOption.propTypes = {
   Icon: PropTypes.object,
   title: PropTypes.string,
   number: PropTypes.number,
+  selected: PropTypes.bool,
 };
 
 export default SidebarOption;
