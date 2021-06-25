@@ -29,4 +29,6 @@ export const EmailSections = styled.div`
   z-index: 999;
 `;
 
-export const List = styled.div``;
+export const List = styled.div`
+  padding-bottom: 20%;
+`;

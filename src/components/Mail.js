@@ -23,9 +23,12 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import PrintIcon from "@material-ui/icons/Print";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { useSelector } from "react-redux";
+import { selectOpenMail } from "../features/mailSlice";
 
 const Mail = () => {
   const history = useHistory();
+  const selectedMail = useSelector(selectOpenMail);
 
   return (
     <Container>
@@ -85,14 +88,14 @@ const Mail = () => {
 
       <Body>
         <BodyHeader>
-          <h2>Subject</h2>
+          <h2>{selectedMail?.subject}</h2>
           <BodyImportant />
-          <p>Title</p>
-          <Time>10pm</Time>
+          <p>{selectedMail?.title}</p>
+          <Time>{selectedMail?.time}</Time>
         </BodyHeader>
 
         <Message>
-          <p>This is a message</p>
+          <p>{selectedMail?.description}</p>
         </Message>
       </Body>
     </Container>

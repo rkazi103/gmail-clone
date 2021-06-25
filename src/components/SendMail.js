@@ -10,6 +10,8 @@ import {
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMessage } from "../features/mailSlice";
+import { db } from "../services/firebase";
+import firebase from "firebase";
 
 const SendMail = () => {
   const {
@@ -19,7 +21,16 @@ const SendMail = () => {
   } = useForm();
   const dispatch = useDispatch();
 
-  const onSubmit = (formData) => {};
+  const onSubmit = (formData) => {
+    db.collection("emails").add({
+      to: formData.to,
+      subject: formData.subject,
+      message: formData.message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    dispatch(closeSendMessage());
+  };
 
   return (
     <Container>
