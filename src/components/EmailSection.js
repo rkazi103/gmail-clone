@@ -1,7 +1,7 @@
-import { Container } from "./SectionStyle";
+import { Container } from "../styles/EmailSectionStyle";
 import PropTypes from "prop-types";
 
-const Section = ({ Icon, title, color, selected }) => {
+const EmailSection = ({ Icon, title, color, selected }) => {
   return (
     <Container selected={selected} color={color}>
       <Icon />
@@ -10,11 +10,11 @@ const Section = ({ Icon, title, color, selected }) => {
   );
 };
 
-Section.propTypes = {
+EmailSection.propTypes = {
   Icon: PropTypes.object,
   title: PropTypes.string,
   color: PropTypes.string,
   selected: PropTypes.bool,
 };
 
-export default Section;
+export default EmailSection;

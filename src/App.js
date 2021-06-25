@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./components/header/";
-import Sidebar from "./components/sidebar/";
-import GlobalStyles from "./styles/globalStyles";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import GlobalStyles from "./styles/GlobalStyles";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container, Body } from "./AppStyle";
-import Mail from "./components/mail/";
-import EmailList from "./components/email-list/";
-import SendMail from "./components/send-mail/";
+import Mail from "./components/Mail";
+import EmailList from "./components/EmaiList";
+import SendMail from "./components/SendMail";
 import { useSelector } from "react-redux";
 import { selectSendMessageIsOpen } from "./features/mailSlice";
 

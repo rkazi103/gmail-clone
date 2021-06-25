@@ -5,7 +5,7 @@ import {
   Message,
   Description,
   Time,
-} from "./EmailRowStyle";
+} from "../styles/EmailRowStyle";
 import PropTypes from "prop-types";
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
 import LabelImportantOutlinedIcon from "@material-ui/icons/LabelImportantOutlined";

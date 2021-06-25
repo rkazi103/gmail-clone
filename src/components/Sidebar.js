@@ -1,4 +1,9 @@
-import { Container, ComposeButton, Footer, FooterIcons } from "./SidebarStyle";
+import {
+  Container,
+  ComposeButton,
+  Footer,
+  FooterIcons,
+} from "../styles/SidebarStyle";
 import AddIcon from "@material-ui/icons/Add";
 import SidebarOption from "./SidebarOption";
 import InboxIcon from "@material-ui/icons/Inbox";
@@ -13,7 +18,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import DuoIcon from "@material-ui/icons/Duo";
 import PhoneIcon from "@material-ui/icons/Phone";
 import { useDispatch } from "react-redux";
-import { openSendMessage } from "../../features/mailSlice";
+import { openSendMessage } from "../features/mailSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();

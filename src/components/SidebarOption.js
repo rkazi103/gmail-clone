@@ -1,4 +1,4 @@
-import { Container } from "./SidebarOptionStyle";
+import { Container } from "../styles/SidebarOptionStyle";
 import PropTypes from "prop-types";
 
 const SidebarOption = ({ Icon, title, number, selected }) => {

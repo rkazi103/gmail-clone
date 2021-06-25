@@ -4,7 +4,7 @@ import {
   Leftside,
   Middle,
   Rightside,
-} from "./HeaderStyle";
+} from "../styles/HeaderStyle";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AppsIcon from "@material-ui/icons/Apps";

@@ -8,7 +8,7 @@ import {
   BodyImportant,
   Message,
   Time,
-} from "./MailStyle";
+} from "../styles/MailStyle";
 import { IconButton } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";

@@ -6,10 +6,10 @@ import {
   SendButton,
   Message,
   ErrorMessage,
-} from "./SendMailStyle";
+} from "../styles/SendMailStyle";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { closeSendMessage } from "../../features/mailSlice";
+import { closeSendMessage } from "../features/mailSlice";
 
 const SendMail = () => {
   const {
