@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const mailSlice = createSlice({
-  name: "counter",
+  name: "mail",
   initialState,
   reducers: {
     openSendMessage: (state) => {

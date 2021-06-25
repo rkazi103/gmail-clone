@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import GlobalStyles from "./styles/GlobalStyles";
@@ -7,35 +7,59 @@ import { Container, Body } from "./AppStyle";
 import Mail from "./components/Mail";
 import EmailList from "./components/EmaiList";
 import SendMail from "./components/SendMail";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectSendMessageIsOpen } from "./features/mailSlice";
+import { login, selectUser } from "./features/userSlice";
+import Login from "./components/Login";
+import { auth } from "./services/firebase";
 
 const App = () => {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(
+          login({
+            displayName: user.displayName,
+            emal: user.email,
+            photoUrl: user.photoURL,
+          })
+        );
+      } else {
+      }
+    });
+  }, [dispatch]);
 
   return (
     <Router>
-      <Container>
-        <GlobalStyles />
+      {!user ? (
+        <Login />
+      ) : (
+        <Container>
+          <GlobalStyles />
 
-        <Header />
+          <Header />
 
-        <Body>
-          <Sidebar />
+          <Body>
+            <Sidebar />
 
-          <Switch>
-            <Route path="/mail">
-              <Mail />
-            </Route>
+            <Switch>
+              <Route path="/mail">
+                <Mail />
+              </Route>
 
-            <Route path="/">
-              <EmailList />
-            </Route>
-          </Switch>
-        </Body>
+              <Route path="/">
+                <EmailList />
+              </Route>
+            </Switch>
+          </Body>
 
-        {sendMessageIsOpen && <SendMail />}
-      </Container>
+          {sendMessageIsOpen && <SendMail />}
+        </Container>
+      )}
     </Router>
   );
 };

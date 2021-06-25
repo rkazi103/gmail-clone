@@ -10,8 +10,20 @@ import SearchIcon from "@material-ui/icons/Search";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { IconButton, Avatar } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../features/userSlice";
+import { auth } from "../services/firebase";
 
 const Header = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <Container>
       <Leftside>
@@ -42,7 +54,11 @@ const Header = () => {
           <NotificationsIcon />
         </IconButton>
 
-        <Avatar />
+        <Avatar
+          style={{ cursor: "pointer" }}
+          onClick={signOut}
+          src={user?.photoUrl}
+        />
       </Rightside>
     </Container>
   );
