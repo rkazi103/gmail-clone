@@ -52,7 +52,3 @@ Start the server
 ```bash
   yarn start
 ```
-
-## Feedback
-
-If you have any feedback, please email me at rayan.quack.you@gmail.com
